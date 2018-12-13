@@ -1,12 +1,46 @@
 $(document).ready(function(){
    var mymap = L.map('mymap',
                     {
-                    center: [52.1, 21.0],
-                    zoom: 10,
-                    zoomControl:false,
-                    attributionControl:false,
+                     center: [52.1, 21.0], 
+                     zoom: 10,
+                     zoomControl:true,
+                     attributionControl:false
                     }
                     );
+    
+    var lyrORTO = L.tileLayer.wms('http://mapy.geoportal.gov.pl/wss/service/img/guest/ORTO/MapServer/WMSServer',
+                                 {
+                                  layers: 'Raster',
+                                  format: 'image/png',
+                                  transparent: 'true',
+                                  version:'1.1.1'
+                                  }
+                                 ); 
+    var lyrSOZO =L.tileLayer.wms('http://mapy.geoportal.gov.pl/wss/service/img/guest/SOZO/MapServer/WMSServer',
+                               {
+                                  layers: 'Raster',
+                                  format: 'image/png',
+                                  transparent: 'true',
+                                  version:'1.1.1'
+                                  }
+                                );
+    var lyrPRGWOJ = L.tileLayer.wms ('http://localhost:8080/geoserver/ATE_workspace/wms',
+                                 {layers: 'wojewodztwa',
+                                  format: 'image/png',
+                                  transparent: 'true',
+                                  version:'1.1.1'
+                                   }
+                                 );
+    
     var lyrOSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
-    mymap.addLayer (lyrOSM);
+    mymap.addLayer(lyrOSM);
+    
+   var BaseMaps = {
+       "OpenSteetMaps": lyrOSM,
+       "ORTOFOTOMAPA": lyrORTO,
+       "Mapa Sozologiczna": lyrSOZO,
+       "Wykaz województw" : lyrPRGWOJ
+   }; 
+    L.control.layers (BaseMaps).addTo(mymap);
+    L.control.scale({imperial:'False'}).addTo(mymap);
 });
