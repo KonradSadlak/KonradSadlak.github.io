@@ -7,6 +7,7 @@ $(document).ready(function(){
                      attributionControl:false
                     }
                     );
+ 
     
     var lyrORTO = L.tileLayer.wms('http://mapy.geoportal.gov.pl/wss/service/img/guest/ORTO/MapServer/WMSServer',
                                  {
@@ -39,8 +40,14 @@ $(document).ready(function(){
        "OpenSteetMaps": lyrOSM,
        "ORTOFOTOMAPA": lyrORTO,
        "Mapa Sozologiczna": lyrSOZO,
-       "Wykaz województw" : lyrPRGWOJ
+       
    }; 
-    L.control.layers (BaseMaps).addTo(mymap);
-    L.control.scale({imperial:'False'}).addTo(mymap);
+       //lista obiektów checkobx
+    
+    var overlays= {
+        "Wykaz województw" : lyrPRGWOJ
+    };
+    L.control.layers (BaseMaps, overlays).addTo(mymap);
+    // usunięcie ze skali podziałki w milach
+    L.control.scale({imperial:false}).addTo(mymap);
 });

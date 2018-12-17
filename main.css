@@ -103,7 +103,19 @@ figure
 	height: 70vh;
 	width:auto;
 }
-
+.tekst{
+    text-align: justify;
+    text-indent: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.obrazek img{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    margin: auto;
+    
+}
 
 
 
