@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:se="http://www.opengis.net/se" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1.0">
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se" version="1.1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ogc="http://www.opengis.net/ogc" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd">
   <NamedLayer>
     <se:Name>województwa</se:Name>
     <UserStyle>
       <se:Name>województwa</se:Name>
       <se:FeatureTypeStyle>
         <se:Rule>
-          <se:Name>dolnoĹ›lÄ…skie</se:Name>
+          <se:Name>dolnoslaskie</se:Name>
           <se:Description>
-            <se:Title>dolnoĹ›lÄ…skie</se:Title>
+            <se:Title>dolnoslaskie</se:Title>
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>dolnoĹ›lÄ…skie</ogc:Literal>
+              <ogc:Literal>dolnoslaskie</ogc:Literal>
             </ogc:PropertyIsEqualTo>
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#63b9cc</se:SvgParameter>
+              <se:SvgParameter name="fill">#3cd9c2</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -27,8 +27,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#3cd9c2</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -47,7 +50,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#cda94f</se:SvgParameter>
+              <se:SvgParameter name="fill">#5f9ce5</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -56,27 +59,30 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#5f9ce5</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
           </se:PolygonSymbolizer>
         </se:Rule>
         <se:Rule>
-          <se:Name>Ĺ‚Ăłdzkie</se:Name>
+          <se:Name>lodzkie</se:Name>
           <se:Description>
-            <se:Title>Ĺ‚Ăłdzkie</se:Title>
+            <se:Title>lodzkie</se:Title>
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>Ĺ‚Ăłdzkie</ogc:Literal>
+              <ogc:Literal>lodzkie</ogc:Literal>
             </ogc:PropertyIsEqualTo>
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#6adaa0</se:SvgParameter>
+              <se:SvgParameter name="fill">#ea2019</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -85,66 +91,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
-            <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
-              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
-              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
-            </se:Stroke>
-          </se:PolygonSymbolizer>
-        </se:Rule>
-        <se:Rule>
-          <se:Name>Ĺ›lÄ…skie</se:Name>
-          <se:Description>
-            <se:Title>Ĺ›lÄ…skie</se:Title>
-          </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
-            <ogc:PropertyIsEqualTo>
-              <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>Ĺ›lÄ…skie</ogc:Literal>
-            </ogc:PropertyIsEqualTo>
-          </ogc:Filter>
-          <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#5124e6</se:SvgParameter>
+              <se:SvgParameter name="fill">#ea2019</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#232323</se:SvgParameter>
-              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
-              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
-            </se:Stroke>
-          </se:PolygonSymbolizer>
-          <se:PolygonSymbolizer>
-            <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
-              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
-              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
-            </se:Stroke>
-          </se:PolygonSymbolizer>
-        </se:Rule>
-        <se:Rule>
-          <se:Name>Ĺ›wiÄ™tokrzyskie</se:Name>
-          <se:Description>
-            <se:Title>Ĺ›wiÄ™tokrzyskie</se:Title>
-          </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
-            <ogc:PropertyIsEqualTo>
-              <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>Ĺ›wiÄ™tokrzyskie</ogc:Literal>
-            </ogc:PropertyIsEqualTo>
-          </ogc:Filter>
-          <se:PolygonSymbolizer>
-            <se:Fill>
-              <se:SvgParameter name="fill">#d9688e</se:SvgParameter>
-            </se:Fill>
-            <se:Stroke>
-              <se:SvgParameter name="stroke">#232323</se:SvgParameter>
-              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
-              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
-            </se:Stroke>
-          </se:PolygonSymbolizer>
-          <se:PolygonSymbolizer>
-            <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -163,7 +114,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#cb7543</se:SvgParameter>
+              <se:SvgParameter name="fill">#c89916</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -172,8 +123,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#c89916</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -192,7 +146,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#9638d0</se:SvgParameter>
+              <se:SvgParameter name="fill">#858ef0</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -201,27 +155,30 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#858ef0</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
           </se:PolygonSymbolizer>
         </se:Rule>
         <se:Rule>
-          <se:Name>maĹ‚opolskie</se:Name>
+          <se:Name>malopolskie</se:Name>
           <se:Description>
-            <se:Title>maĹ‚opolskie</se:Title>
+            <se:Title>malopolskie</se:Title>
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>maĹ‚opolskie</ogc:Literal>
+              <ogc:Literal>malopolskie</ogc:Literal>
             </ogc:PropertyIsEqualTo>
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#1d32d3</se:SvgParameter>
+              <se:SvgParameter name="fill">#d2580c</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -230,8 +187,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#d2580c</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -250,7 +210,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#8ecc37</se:SvgParameter>
+              <se:SvgParameter name="fill">#79d687</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -259,8 +219,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#79d687</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -279,7 +242,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#d043d5</se:SvgParameter>
+              <se:SvgParameter name="fill">#9a4dca</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -288,8 +251,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#9a4dca</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -308,7 +274,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#d0dd1a</se:SvgParameter>
+              <se:SvgParameter name="fill">#de61b4</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -317,8 +283,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#de61b4</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -337,7 +306,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#e948b6</se:SvgParameter>
+              <se:SvgParameter name="fill">#d224d8</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -346,8 +315,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#d224d8</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -366,7 +338,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#76ea86</se:SvgParameter>
+              <se:SvgParameter name="fill">#57c0da</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -375,27 +347,30 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#57c0da</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
           </se:PolygonSymbolizer>
         </se:Rule>
         <se:Rule>
-          <se:Name>warmiĹ„sko-mazurskie</se:Name>
+          <se:Name>slaskie</se:Name>
           <se:Description>
-            <se:Title>warmiĹ„sko-mazurskie</se:Title>
+            <se:Title>slaskie</se:Title>
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:PropertyIsEqualTo>
               <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
-              <ogc:Literal>warmiĹ„sko-mazurskie</ogc:Literal>
+              <ogc:Literal>slaskie</ogc:Literal>
             </ogc:PropertyIsEqualTo>
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#32d2b8</se:SvgParameter>
+              <se:SvgParameter name="fill">#5fcf40</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -404,8 +379,75 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#5fcf40</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>swietokrzyskie</se:Name>
+          <se:Description>
+            <se:Title>swietokrzyskie</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
+              <ogc:Literal>swietokrzyskie</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#20e884</se:SvgParameter>
+            </se:Fill>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#20e884</se:SvgParameter>
+            </se:Fill>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>warminsko-mazurskie</se:Name>
+          <se:Description>
+            <se:Title>warminsko-mazurskie</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>jpt_nazwa_</ogc:PropertyName>
+              <ogc:Literal>warminsko-mazurskie</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#d0245a</se:SvgParameter>
+            </se:Fill>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#d0245a</se:SvgParameter>
+            </se:Fill>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -424,7 +466,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#75ef53</se:SvgParameter>
+              <se:SvgParameter name="fill">#7a55df</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -433,8 +475,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#7a55df</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -453,7 +498,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#d62825</se:SvgParameter>
+              <se:SvgParameter name="fill">#a6d06f</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -462,8 +507,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#a6d06f</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
@@ -487,7 +535,7 @@
           </ogc:Filter>
           <se:PolygonSymbolizer>
             <se:Fill>
-              <se:SvgParameter name="fill">#7aa4d4</se:SvgParameter>
+              <se:SvgParameter name="fill">#c2cf2b</se:SvgParameter>
             </se:Fill>
             <se:Stroke>
               <se:SvgParameter name="stroke">#232323</se:SvgParameter>
@@ -496,8 +544,11 @@
             </se:Stroke>
           </se:PolygonSymbolizer>
           <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#c2cf2b</se:SvgParameter>
+            </se:Fill>
             <se:Stroke>
-              <se:SvgParameter name="stroke">#0c0307</se:SvgParameter>
+              <se:SvgParameter name="stroke">#000000</se:SvgParameter>
               <se:SvgParameter name="stroke-width">1</se:SvgParameter>
               <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
             </se:Stroke>
