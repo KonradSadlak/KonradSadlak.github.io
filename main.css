@@ -116,6 +116,15 @@ figure
     margin: auto;
     
 }
-
+.model{
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    margin: auto;
+    content: inherit;
+    
+    
+    
+}
 
 

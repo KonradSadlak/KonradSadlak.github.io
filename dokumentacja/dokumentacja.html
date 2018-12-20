@@ -40,13 +40,200 @@
                         Laboratorium polegało na przeprowadzeniu analizy wielokryterialnej w celu znalezienia jak najlepszej lokalizacji dla szkoły w miejscowości Łódź. Podczas pracy wykorzystane zostały materiały pochodzące z OpenStreetMap. Dane w formacie .shp można pobrać za darmo ze strony download.geofabrik.de. Wymieniony społecznościowy serwis GIS udostępnia 18 klas obiektów takich jak np. drożnia czy koleje, których dokładność położenia w terenie wynosi ±10m. W celu wykonania ćwiczenia wykorzystane zostały warstwy zawierające: wody (liniowe oraz powierzchniowe), drogi, linie kolejowe, budynki użyteczności publicznej oraz zagospodarowanie terenu. Z dwóch ostatnich klas wybrano jedynie szkoły, więzienia, cmentarze, tereny rekreacyjne i osiedla mieszkaniowe. 
                         </br></br>
                         Ponadto pobrane zostały materiały pochodzące z CODGIK, do których należały Państwowy Rejestr Granic oraz numeryczny model terenu. Do wykonania zadania zostało wykorzystanie oprogramowanie ArcMap.
-                <div class="obrazek">
-                    <img src="../img/ocena_przejezdnosci.PNG">
-                </div>
-
+               
+                        <header>
+                          
+                            <h1>
+                                Opis realizowanych czynności
+                            </h1>
+                            
+                        </header>
+                        <p>
+Pracę rozpocząłem od wykonania mapy spadków. W tym celu należało w pierwszej kolejności      z pobranego wcześniej NMT (łódzkie.txt) utworzyć nową klasę. Wykorzystana została do tego funkcja ASCII 3D to Feature Class. W parametrach narzędzia ustawiony został format pliku wejściowego jako „XYZ” oraz średni odstęp między punktami- 100m. Na podstawie powstałej warstwy punktowej, wyinterpolowano powierzchnię rastrową za pomocą techniki ważenia odwróconej odległości- funkcja IDW. Wygenerowany raster obejmował swoim zasięgiem całe województwo łódzkie. Przy pomocy funkcji Clip przycięty on został do wyselekcjonowanego wcześniej obszaru miasta Łódź. Ostatni etap obejmował wykonanie mapy spadków. Zostało do tego wykorzystane narzędzie Slope oraz utworzone NMT. W parametrach tej funkcji ustalono jako wyjściową jednostkę pomiaru spadków stopnie.
+ </br></br>
+W następnym etapie prac zostały przycięte warstwy tematyczne OSM do obszaru zainteresowania przy pomocy funkcji Clip. W przeciwieństwie do dróg, wód czy kolei, obiekty takie jak szkoły, więzienia, cmentarze, tereny rekreacyjne oraz osiedla mieszkaniowe nie stanowiły odrębnych klas. Należało je wyselekcjonować z warstw budynków użyteczności publicznej (pois_a) i zagospodarowania terenu (landuse_a). Służy do tego funkcja Select, w której należy określić atrybut (fclass) oraz jego wartość konieczną do wyboru oczekiwanych obiektów. 
+ </br></br>
+Następnie, na podstawie tak przygotowanych danych utworzone zostały strefy buforowe. W narzędziu Multiple Ring Buffer ustalono jako jednostkę buforu metry. Wprowadzono ponadto dla nich wartości odległości od obiektu, które zostały podane przez prowadzącego zajęcia.
+Posiadając wygenerowane strefy buforowe utworzyłem nową klasę za pomocą narzędzia Identity. Obliczyło ono przecięcia geometryczne elementów wejściowych jakimi były bufory z obszarem miejscowości Łódź. Warstwy te zostały przekonwertowane na rastry (narzędzie Feature to Raster), których rozmiary wyjściowe komórek wynosiły 0,003m.
+                        <header>
+                            <h1>Wykonane modele</h1>
+                        </header>
+                        <p>
+                        Modele, które zostały przedstawione poniżej, zostały wykonane przeze mnie na potrzeby laboratorium przy pomocy ModelBuilder. Jest to aplikacja w ArcMap używana do tworzenia, edytowania i zarządzania modelami, czyli sekwencjami połączonych narzędzi.     
                         </p>
+                        <center>
+                        <h3> Model nr 1</h3>
+                        </center>
+                        </p>
+                <div class="model">
+                    <img src="../img/model_2.PNG">
+                </div>
+                        <p>
+                        Powyższy model został wykorzystany do wykonania mapy spadków na obszarze miasta Łódź. Składa się on z czterech narzędzi, które służą do:
+                             </br>
+•	Utworzenia nowej klasy punktowej, zawierającej wartości współrzędnej Z- narzędzie ASCII 3D to Feature Class;
+ </br>
+•	Stworzenia wyinterpolowanej powierzchni rastrowej- narzędzi IDW;
+ </br>
+•	Przycięcia NMT do obszaru miasta- narzędzie Clip;
+ </br>
+•	Wygenerowania mapy spadków;
+ </br> </br>
+Element wejściowy modelu stanowi plik tekstowy, zamierający numeryczny model terenu o interwale siatki co najmniej 100m, a także obszar gminy Łódź.
+                        </p>
+                        <center>
+                        <h3> Model nr 2</h3>
+                        </center>
+                        </p>
+                <div class="model">
+                    <img src="../img/model_1.PNG">
+                </div>
+                        <p>
+Przedstawiony model został stworzony dla prac związanych z utworzeniem rastrów zawierających strefy buforowe dla dziewięciu klas obiektów. Składa się on z pięciu narzędzi, które służą do:
+                </br>             
+•	Przycięcia klas do granicy gminy Łódź- narzędzie Clip;
+ </br>
+•	Wyboru obiektów z warstw na podstawie wartości atrybutu- narzędzie Select (jedynie dla klas budynki użyteczności publicznej oraz tereny rekreacyjne;
+ </br>
+•	Tworzenia buforów zależnych od odległości od obiektu- narzędzie Multiple Ring Buffer;
+ </br>
+•	Obliczenia przecięcia geometrycznego stref buforowych oraz obszaru gminy Łódź- narzędzie Identity;
+ </br>
+•	Przekonwertowania wynikowych warstw na raster- narzędzie Feature to Raster.
+ </br> </br>
+Element wejściowy modelu stanowią pliki o rozszerzeniu .shp zawierające obiekty, uznane za mające wpływ na lokalizację szkoły, a także obszar gminy Łódź. 
+                        </p>
+                        <header>
+                            <h1>Wyniki pracy modeli</h1>
+                        </header>
+                        <p>
+                        W efekcie uruchomienia modelu numer 1, powstała mapa spadków na obszar Łodzi     
+                        </p>    
+                <div class="obrazek">
+                    <img src="../img/spadki.PNG">
+                </div>
+<p>
+Miasto Łódź położone jest w środkowej części województwa łódzkiego. Jego powierzchnia znajduje się na Wysoczyźnie Łaskiej oraz Wzniesieniach Łódzkich. Jak widać na powyższej mapie, znaczna część obszaru jest terenem płaskim, którego nachylenie nie przekracza wartości 1,2 o. Widoczne jest występowanie wymienionych krain geograficznych w części północno- wschodniej oraz południowo- zachodniej gminy. Występują tam większe deniwelacje terenu, a spadki terenu osiągają wartość aż 10-15o. Wszelkiego rodzaju zabudowa, w tym szkoły, nie może powstać na obszarze o nachyleniu większym niż 5o. Wykonana mapa spadków pozwala na wykluczenie niekorzystnych obszarów pod zabudowę, ze względu występujące nachylenie terenu.
+</br>
+Efektem pracy drugiego modelu jest 9 map zawierających strefy buforowe dla klas obiektów, które zostały uznane za mające wpływ na lokalizację jednostki oświatowo- wychowawczej.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/cmentarze.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są cmentarze w Łodzi. W kryterium dystansów zostały wprowadzone wartości 300 oraz 400. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe cmentarzy. Na podstawie powyższej mapy widać, iż w pewnych miejscach Łodzi występują  skupiska miejsc spoczynku, eliminując tym samym dany obszar pod lokalizację szkoły.   
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/drogi.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są drogi w Łodzi. W kryterium dystansów zostały wprowadzone wartości 50 oraz 100. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe drożni. Na podstawie powyższej mapy widać, iż w centralnej części znajduję się nagromadzenie dróg. Można domyślać się, że obszar ten stanowi centrum miejscowości, w którym znajdują się liczne ulicówki. Bliska styczność placówek oświatowo- wychowawczych z drożnią, szczególnie w przypadku szkół podstawowych, jest rozwiązaniem niepożądanym. 
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/kolei.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są linie kolejowe w Łodzi. W kryterium dystansów zostały wprowadzone wartości 200, 300 oraz 400. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe kolei. Na podstawie powyższej mapy widać, iż podobnie jak w przypadku drożni, linie kolejowe skupione są w centralnej części gminy. Licznie rozmieszczone są tam stacje węzłowe oraz przystanki. Wybudowanie szkoły w pobliżu takich obiektów, może stanowić zagrożenie dla bezpieczeństwa uczniów.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/os_mieszk.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są osiedla mieszkaniowe w Łodzi. W kryterium dystansów zostały wprowadzone wartości 100, 200, 300 oraz 400. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe osiedli mieszkaniowych. Na podstawie powyższej mapy można zauważyć ich brak w centralnej oraz północno- wschodniej części. Jest to powiązane z tym, iż są to obrzeża gminy (północny- wschód), gdzie znajdują się pola uprawne i magazyny, oraz centrum przemysłowe miasta (część centralna gminy). Lokalizacja szkoły w jak najbliższym sąsiedztwie z osiedlami mieszkaniowymi jest pożądanym rozwiązaniem.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/szko%C5%82y.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są szkoły w Łodzi. W kryterium dystansów zostały wprowadzone wartości 400, 600 oraz 800. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe szkół. Miasto Łódź jest trzecią miejscowością w Polsce pod względem liczby ludności. Poza tym jest miastem studenckim, dlatego też znajduje się w niej wiele instytucji oświatowo- wychowawczych, co widać na powyższej mapie. Lokalizacja różnego rodzaju szkół, np. liceum i szkół podstawowych, jest dobrym rozwiązaniem.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/tereny_rekreac.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są tereny rekreacyjne w Łodzi. W kryterium dystansów zostały wprowadzone wartości 100, 200, 300 oraz 400. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe terenów rekreacyjnych. Na powyższej mapie widać nieliczne tego rodzaju tereny, głównie w zachodniej części gminy. Bliskie położenie parków oraz działek rekreacyjnych sprzyja lokalizacji szkoły. 
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/wiezienia.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są więzienia w Łodzi. W kryterium dystansów zostały wprowadzone wartości 500, 100 oraz 1200. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe więzień. W porównaniu do innych obiektów, dla zakładów karnych zostały ustalone tak duże wartości odległości, ponieważ jest to obiekt bardzo niepożądany w pobliżu szkoły. Na podstawie powyższej mapy widać, iż na obszarze gminy Łódź znajdują się trzy zakłady karne, w tym dwa w odległości ok. 2km od siebie. Tereny znajdujące się w promieniu 1km2 od tych obiektów wykluczają lokalizację jakiejkolwiek placówki oświatowo- wychowawczej.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/wody_l.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są wody liniowe w Łodzi. W kryterium dystansów zostały wprowadzone wartości 150, 200, 250 oraz 300. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe wód liniowych. Na powyższej mapie widać, że obiekty te znajdują się w głównej mierze w części zachodniej i centralnej Łodzi. Przez gminę nie przechodzi, żadna główna rzeka, która uchodzi do morza. Są to jedynie małe rzeki, stanowiące ich dopływy. Mimo to, szukając lokalizacji dla utworzenia nowej szkoły, należy unikać bliskiego sąsiedztwa z tego rodzaju obiektami.
+</p>
+</br></br></br></br></br></br>
+                <div class="obrazek">
+                    <img src="../img/wody_pow.PNG">
+                </div>
+<p>
+Rysunek przedstawia wygenerowaną mapę zawierającą bufory dla obiektów, jakimi są wody powierzchniowe w Łodzi. W kryterium dystansów zostały wprowadzone wartości 100, 200, 300 oraz 400. Ponadto ustalono metry jako jednostkę buforów. W efekcie uzyskane zostały strefy buforowe wód powierzchniowych. Rozmieszczenie jezior i stawów w gminie jest zróżnicowane. Podobnie jak w przypadku wód liniowych, należy unikać budowy nowych szkół w pobliżu tego typu obiektów. Wiąże się to z zagrożeniami, jakie niesie za sobą styczność z wodą. Są to w głównej mierze utonięcia. 
+</p>
+                        <header>
+                            <h1>Analiza wielokryterialna</h1>
+                        </header>
+<p>
+W poprzednim rozdziale przedstawione zostały kryteria, według których dokonywane będzie poszukiwanie oraz ocena optymalnego usytuowania szkoły. W celu wykonania tego zadania, w oprogramowaniu ArcMap wykorzystano narzędzie Weighted Overlay. W oknie dialogowym funkcji, dla poszczególnych stref buforowych zostały ustalone wagi. Przyjmowały one wartości od 1- obszary najmniej sprzyjające dla lokalizacji szkoły; do 4,5- tereny najbardziej korzystne. Dla przeprowadzenia analizy nie uznano, aby którakolwiek z klas miała większy bądź mniejszy wpływ na optymalne położenie nowej szkoły. W ustawieniach wybrano opcję „Set Equal  Influence”, która ustaliła równy udział procentowy każdej warstwy. W efekcie otrzymano raster, który podzielił obszar ze względu na jego korzystność dla lokalizacji placówki oświatowo- wychowawczej. W związku z tym, że strefy buforowe obiektów znajdujących się przy granicy gminy Łódź wychodziły poza jej obręb, wynik narzędzia Weighted Overlay należało przyciąć funkcją Clip do klasy „Lodz”. Efektem powyżej opisanego etapu prac jest mapa przedstawiona na rysunku poniżej.
+</p>
+</br></br>
+                <div class="obrazek">
+                    <img src="../img/klasyfikacja.PNG">
+                </div>
+</br></br>
+<p>
+    Mapa przedstawia trzy rodzaje terenu dla lokalizacji szkoły:
+    </br>
+•	Niekorzystne- których waga wynosi 2;
+</br>
+•	Umiarkowane- których waga wynosi 3;
+</br>
+•	Korzystne- których waga wynosi 4;
+</br></br>
+Na rysunku nie znajdują się obszary o wadze 1.  Znaczną część gminy Łódź zajmują terenu umiarkowanie korzystne. W celu wyróżnienia najlepszych lokalizacji wykorzystano narzędzie Con. Wczytano przycięty raster oraz wprowadzono wyrażenie „Value = 4”, które funkcja miała wykonać. Ponieważ efektem pracy jest rysunek, na którym widać poszczególne piksele wykonano przepróbkowanie obrazu- narzędzie Majority Filter. Wynikowe komórki uzyskały wartości na podstawie większości z ośmiu sąsiednich komórek rastra wejściowego. W rezultacie uzyskana została mapa widoczna na rysunku poniżej.
+</br></br>
+</p>
+                <div class="obrazek">
+                    <img src="../img/najkorzystniejsze.PNG">
+                </div>
+</br></br>
+<p>
+Następnie z zawartych w oprogramowaniu map bazowych wybrano ortofotomapę i wrzucono na pole mapowe. Poprzez przeanalizowanie wszystkich terenów najkorzystniejszych i  ortoobrazów wybrano dwa obszary, które najlepiej nadają się na lokalizację szkoły. Wpływ na wybór miało w głównej mierze zlokalizowanie w pobliżu licznych blokowisk, osiedli, a także położenie na obszarach o małym nachyleniu terenu. Poniższy rysunek przedstawia ostateczny wynik przeprowadzonej analizy.
+</br></br>
+</p>
+                <div class="obrazek">
+                    <img src="../img/najlepsza_lokalizacja.PNG">
+                </div>
+</br></br>
+                        <header>
+                            <h1>Wnioski</h1>
+                        </header>
+<p>
+Cel laboratorium został zrealizowany. Program ArcMap poprawnie wykonał utworzone modele. Korzystając z narzędzia Weighted Overlay należy pamiętać, aby w polach wag, odpowiadającym danym o charakterze „NODATA” wpisać odpowiednią, kolejną wartość skali. Pozostawienie wartości „NODATA”, w przypadku wystąpienia obszarów objętych takimi danymi, spowoduje powstanie błędnego wyniku analizy, bądź powstanie pustego rastra. 
+</br>
+W przypadku przeprowadzania takich zadań, wagi mają znaczenie. Im większy udział procentowy danej klasy obiektu, tym bardziej zależna staje się od niej analiza.
+</br></br>
+</p>
+                        <header>
+                            <h1>Podsumowanie</h1>
+                        </header>
+<p>
+Poznane na zajęciach analizy wielokryterialne pozwalają na wspieranie procesów decyzyjnych w oparciu o różnorodne kryteria. Obecnie tego rodzaju działania są powszechnie wykorzystywane podczas rozpatrywania m.in. optymalnego przebiegu infrastruktury drogowej. 
+</br></br></br></br></br></br>    
+</p>
                     </article>            
                 </div>
+
     
             </div>
         </body>
